@@ -109,17 +109,14 @@
                 <td>
                     <select id="fromMonth" class="timePeriodSelector">
                         <option value="Jan">Jan</option>
-                        <option value="Feb">Feb</option>
-                        <option value="Mar">Mar</option>
+
                         <option value="Apr">Apr</option>
-                        <option value="May">May</option>
-                        <option value="Jun">Jun</option>
+
                         <option value="Jul">Jul</option>
-                        <option value="Aug">Aug</option>
-                        <option value="Sep">Sep</option>
+
                         <option value="Oct">Oct</option>
-                        <option value="Nov">Nov</option>
-                        <option value="Dec">Dec</option>
+
+
                     </select>
                     <select id="fromYear" class="timePeriodSelector">
                     </select>
@@ -130,17 +127,14 @@
                 <td>
                     <select id="toMonth" class="timePeriodSelector">
                         <option value="Jan">Jan</option>
-                        <option value="Feb">Feb</option>
-                        <option value="Mar">Mar</option>
+
                         <option value="Apr">Apr</option>
-                        <option value="May">May</option>
-                        <option value="Jun">Jun</option>
+
                         <option value="Jul">Jul</option>
-                        <option value="Aug">Aug</option>
-                        <option value="Sep">Sep</option>
+
                         <option value="Oct">Oct</option>
-                        <option value="Nov">Nov</option>
-                        <option value="Dec">Dec</option>
+
+
                     </select>
                     <select id="toYear" class="timePeriodSelector">
                     </select>
@@ -165,7 +159,7 @@
         </select>
         <br>
         <br>
-        <button id="updateCharts">Update Chart Options</button>
+        <button id="updateCharts">Update Charts </button>
     </div>
     <div id="usMap">
         <svg></svg>
@@ -178,7 +172,7 @@
     // Set up selection controls.
     $(document.getElementsByName("comparison")).on("click", function() {
         var _this = this;
-        if (_this.value == "state") {
+        if (_this.value == "country") {
             $("#countryComparisonOptions").attr("disabled", false);
             $(".yearComparisonOptions").attr("disabled", true);
             $(".timePeriodSelector").attr("disabled", false);
@@ -204,7 +198,7 @@
 
     var fromYearSelection = d3.select("#fromYear");
     var toYearSelection = d3.select("#toYear");
-    for (var i = 1978; i <= 1982; ++i) {
+    for (var i = 1998; i <= 2018; ++i) {
         fromYearSelection.append("option")
             .attr("value", i)
             .text(i);
@@ -215,7 +209,7 @@
 
     var yearSelection1 = d3.select("#year1");
     var yearSelection2 = d3.select("#year2");
-    for (var i = 1978; i <= 1981; ++i) {
+    for (var i = 1998; i <= 2017; ++i) {
         yearSelection1.append("option")
             .attr("value", i)
             .text(i);
@@ -224,8 +218,8 @@
             .text(i);
     }
 
-    document.getElementById("toYear").value = "1982";
-    document.getElementById("toMonth").value = "Dec";
+    document.getElementById("toYear").value = "2018";
+    document.getElementById("toMonth").value = "Oct";
 
     //Width and height
     var margin = {top: 30, right: 20, bottom: 30, left: 50};
@@ -283,7 +277,7 @@
     d3.csv("debt.csv", function(data) {
         dataAllCountries = {};
 
-        // Process the date and rate of each datum, and add it to the corresponding state's array.
+        // Process the date and rate of each datum, and add it to the corresponding country's array.
         data.forEach(function(d) {
             if (!dataAllCountries[d.country]) {
                 dataAllCountries[d.country] = [];
@@ -293,7 +287,7 @@
             dataAllCountries[d.country].push(d);
         });
 
-        // Sort each state's unemployment time series by date.
+        // Sort each country's debt time series by date.
         for (var country in dataAllCountries) {
             dataAllCountries[country].sort(function(a,b) {
                 if (a.date < b.date) {
@@ -326,7 +320,7 @@
             option.append("input")
                 .attr("type", "checkbox")
                 .property("checked", function(d) {
-                    return (d == "Texas" || d == "National Average")
+                    return (d == "United States" || d == "National Average")
                 })
                 .attr("name", "countrySelection")
                 .attr("id", removeWhitespace)
@@ -335,7 +329,7 @@
                 .text(d.country);
             option.append("br");
             /*
-            if (d.country == "Texas" || d.country == "National Average") {
+            if (d.country == "United States" || d.country == "National Average") {
               option.select("input").attr("checked", true);
             }
             */
@@ -357,10 +351,10 @@
             .append("svg")
             .style("display", "block")
             .attr("id", function(d) { return removeWhitespace(d.country); })
-            .classed("chartActive", function(d) { return d.country == "National Average" || d.country == "Texas"; })
+            .classed("chartActive", function(d) { return d.country == "National Average" || d.country == "United States"; })
             .attr("width", svgWidth)
             .attr("height", function(d) {
-                if (d.country == "National Average" || d.country == "Texas") {
+                if (d.country == "National Average" || d.country == "United States") {
                     return svgHeight;
                 } else {
                     return 0;
@@ -426,7 +420,7 @@
             .attr("y", 6)
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
-            .text("Debt(mln $)")
+            .text("Debt (tn $)")
 
         // Add focus circle and value.
         var focus = svgCharts.append("g")
@@ -450,6 +444,8 @@
             .attr("fill", "#888")
             .text(function(d) { return d; });
 
+
+
         // Register mouse handlers.
         svgCharts.on("mouseover", function(d) {
             d3.select("#usMap").select("#" + removeWhitespace(d.country))
@@ -467,6 +463,8 @@
             .on("dblclick", function(d) {
                 changeChartDisplay(d.country);
             })
+
+
 
         function mousemove(d) {
             var x0 = x.invert(d3.mouse(this)[0]);
@@ -516,7 +514,7 @@
                 focus.select("text").attr("text-anchor", "start");
             }
             focus.attr("transform", "translate(" + x0 + "," + pos.y + ")");
-            focus.select("text").text((d.date.getMonth() + 1) + "/" + d.date.getFullYear() + ": " + d.debt + "%");
+            focus.select("text").text((d.date.getMonth() + 1) + "/" + d.date.getFullYear() + ": " + d.debt );
         }
 
         updateCharts();
@@ -688,7 +686,7 @@
 
         x.domain([fromDate1, toDate1]);
 
-        // Offset to obtain compared year unemployment value.
+        // Offset to obtain compared year debt value.
         var iteratorOffset = 12 * (year1 - year2);
 
         // Update areas.
@@ -781,25 +779,25 @@
                         .call(updateChartNoComparison, fromDate, toDate);
                 }
             });
-        } else if (document.getElementById("stateComparison").checked) {
-            // State comparisons selected.
+        } else if (document.getElementById("countryComparison").checked) {
+            // Country comparisons selected.
             activeCharts[0].forEach(function(d, i, array) {
                 // If the chart is active, transition.  Otherwise, don't.
                 if (array[i].id == array[array.length - 1].id) {
                     d3.select(d)
                         .transition().duration(2000)
-                        .call(updateChartStateComparison, fromDate, toDate)
+                        .call(updateChartCountryComparison, fromDate, toDate)
                         .each("end", function(a) {
                             inactiveCharts[0].forEach(function(d) {
                                 d = d3.select(d);
-                                d.call(updateChartStateComparison, fromDate, toDate);
+                                d.call(updateChartCountryComparison, fromDate, toDate);
                             });
                         });
 
                 } else {
                     d3.select(d)
                         .transition().duration(2000)
-                        .call(updateChartStateComparison, fromDate, toDate);
+                        .call(updateChartCountryComparison, fromDate, toDate);
                 }
             });
         } else {
