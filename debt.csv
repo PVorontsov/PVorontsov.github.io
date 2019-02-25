@@ -1,0 +1,184 @@
+year,month,country,debt
+1978,Jan,National Average,7.1
+1978,Feb,National Average,6.9
+1978,Mar,National Average,6.6
+1978,Apr,National Average,5.8
+1978,May,National Average,5.5
+1978,Jun,National Average,6.2
+1978,Jul,National Average,6.3
+1978,Aug,National Average,5.9
+1978,Sep,National Average,5.8
+1978,Oct,National Average,5.4
+1978,Nov,National Average,5.6
+1978,Dec,National Average,5.7
+1979,Jan,National Average,6.4
+1979,Feb,National Average,6.4
+1979,Mar,National Average,6.1
+1979,Apr,National Average,5.5
+1979,May,National Average,5.2
+1979,Jun,National Average,6
+1979,Jul,National Average,5.9
+1979,Aug,National Average,5.9
+1979,Sep,National Average,5.7
+1979,Oct,National Average,5.6
+1979,Nov,National Average,5.6
+1979,Dec,National Average,5.7
+1980,Jan,National Average,6.9
+1980,Feb,National Average,6.8
+1980,Mar,National Average,6.6
+1980,Apr,National Average,6.7
+1980,May,National Average,7.1
+1980,Jun,National Average,7.8
+1980,Jul,National Average,7.9
+1980,Aug,National Average,7.6
+1980,Sep,National Average,7.2
+1980,Oct,National Average,7.1
+1980,Nov,National Average,7.1
+1980,Dec,National Average,6.9
+1981,Jan,National Average,8.2
+1981,Feb,National Average,8
+1981,Mar,National Average,7.7
+1981,Apr,National Average,7
+1981,May,National Average,7.1
+1981,Jun,National Average,7.7
+1981,Jul,National Average,7.3
+1981,Aug,National Average,7.2
+1981,Sep,National Average,7.3
+1981,Oct,National Average,7.5
+1981,Nov,National Average,7.9
+1981,Dec,National Average,8.3
+1982,Jan,National Average,9.4
+1982,Feb,National Average,9.6
+1982,Mar,National Average,9.5
+1982,Apr,National Average,9.2
+1982,May,National Average,9.1
+1982,Jun,National Average,9.8
+1982,Jul,National Average,9.8
+1982,Aug,National Average,9.6
+1982,Sep,National Average,9.7
+1982,Oct,National Average,9.9
+1982,Nov,National Average,10.4
+1982,Dec,National Average,10.5
+1978,Jan,Afghanistan,7.1
+1978,Feb,Afghanistan,6.9
+1978,Mar,Afghanistan,6.6
+1978,Apr,Afghanistan,5.8
+1978,May,Afghanistan,5.5
+1978,Jun,Afghanistan,6.2
+1978,Jul,Afghanistan,9.3
+1978,Aug,Afghanistan,5.9
+1978,Sep,Afghanistan,5.8
+1978,Oct,Afghanistan,5.4
+1978,Nov,Afghanistan,5.6
+1978,Dec,Afghanistan,8.7
+1979,Jan,Afghanistan,6.4
+1979,Feb,Afghanistan,6.4
+1979,Mar,Afghanistan,6.1
+1979,Apr,Afghanistan,8.5
+1979,May,Afghanistan,5.2
+1979,Jun,Afghanistan,6
+1979,Jul,Afghanistan,5.9
+1979,Aug,Afghanistan,5.9
+1979,Sep,Afghanistan,5.7
+1979,Oct,Afghanistan,5.6
+1979,Nov,Afghanistan,5.6
+1979,Dec,Afghanistan,5.7
+1980,Jan,Afghanistan,6.9
+1980,Feb,Afghanistan,6.8
+1980,Mar,Afghanistan,6.6
+1980,Apr,Afghanistan,6.7
+1980,May,Afghanistan,7.1
+1980,Jun,Afghanistan,7.8
+1980,Jul,Afghanistan,7.9
+1980,Aug,Afghanistan,7.6
+1980,Sep,Afghanistan,7.2
+1980,Oct,Afghanistan,7.1
+1980,Nov,Afghanistan,7.1
+1980,Dec,Afghanistan,6.9
+1981,Jan,Afghanistan,8.2
+1981,Feb,Afghanistan,8
+1981,Mar,Afghanistan,7.7
+1981,Apr,Afghanistan,7
+1981,May,Afghanistan,7.1
+1981,Jun,Afghanistan,7.7
+1981,Jul,Afghanistan,2.3
+1981,Aug,Afghanistan,7.2
+1981,Sep,Afghanistan,7.3
+1981,Oct,Afghanistan,7.5
+1981,Nov,Afghanistan,7.9
+1981,Dec,Afghanistan,8.3
+1982,Jan,Afghanistan,9.4
+1982,Feb,Afghanistan,9.6
+1982,Mar,Afghanistan,9.5
+1982,Apr,Afghanistan,9.2
+1982,May,Afghanistan,3.1
+1982,Jun,Afghanistan,9.8
+1982,Jul,Afghanistan,9.8
+1982,Aug,Afghanistan,9.6
+1982,Sep,Afghanistan,9.7
+1982,Oct,Afghanistan,9.9
+1982,Nov,Afghanistan,10.4
+1982,Dec,Afghanistan,10.5
+1978,Jan,Albania,5.1
+1978,Feb,Albania,6.9
+1978,Mar,Albania,4.6
+1978,Apr,Albania,5.8
+1978,May,Albania,5.5
+1978,Jun,Albania,3.2
+1978,Jul,Albania,6.3
+1978,Aug,Albania,5.9
+1978,Sep,Albania,9.8
+1978,Oct,Albania,2.4
+1978,Nov,Albania,5.6
+1978,Dec,Albania,5.7
+1979,Jan,Albania,6.4
+1979,Feb,Albania,6.4
+1979,Mar,Albania,6.1
+1979,Apr,Albania,7.5
+1979,May,Albania,5.2
+1979,Jun,Albania,6
+1979,Jul,Albania,5.9
+1979,Aug,Albania,5.9
+1979,Sep,Albania,1.7
+1979,Oct,Albania,5.6
+1979,Nov,Albania,9.6
+1979,Dec,Albania,5.7
+1980,Jan,Albania,6.9
+1980,Feb,Albania,6.8
+1980,Mar,Albania,6.6
+1980,Apr,Albania,6.7
+1980,May,Albania,7.1
+1980,Jun,Albania,7.8
+1980,Jul,Albania,7.9
+1980,Aug,Albania,7.6
+1980,Sep,Albania,7.2
+1980,Oct,Albania,8.1
+1980,Nov,Albania,7.1
+1980,Dec,Albania,6.9
+1981,Jan,Albania,8.2
+1981,Feb,Albania,8
+1981,Mar,Albania,7.7
+1981,Apr,Albania,7
+1981,May,Albania,7.1
+1981,Jun,Albania,7.7
+1981,Jul,Albania,7.3
+1981,Aug,Albania,7.2
+1981,Sep,Albania,8.3
+1981,Oct,Albania,7.5
+1981,Nov,Albania,7.9
+1981,Dec,Albania,8.3
+1982,Jan,Albania,9.4
+1982,Feb,Albania,9.6
+1982,Mar,Albania,9.5
+1982,Apr,Albania,9.2
+1982,May,Albania,2.1
+1982,Jun,Albania,9.8
+1982,Jul,Albania,9.8
+1982,Aug,Albania,9.6
+1982,Sep,Albania,9.7
+1982,Oct,Albania,9.9
+1982,Nov,Albania,3.4
+1982,Dec,Albania,10.5
+
+
+
