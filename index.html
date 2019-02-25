@@ -16,7 +16,7 @@
         margin-bottom: 5px;
     }
     .inactive {
-        fill: #AAAAAA;
+        fill: #AAA;
     }
     .active {
         fill: orange;
@@ -25,7 +25,7 @@
         /*fill: rgb(145,207,96);*/
     }
     .area.above {
-        fill: rgb(252,141,89);
+        fill: rgb(255,102,102);
     }
     .baseLine {
         stroke: black;
@@ -44,7 +44,7 @@
     .axis path,
     .axis line {
         fill: none;
-        stroke: grey;
+        stroke: black;
         stroke-width: 1;
         shape-rendering: crispEdges;
     }
@@ -91,7 +91,7 @@
 <div id="debtCharts">
 </div>
 
-<!-- All the options for the visualization (states, years, etc.) -->
+<!-- All the options for the visualization (countries, years, etc.) -->
 <div id="options">
     <h1>External debt visualization</h1>
     <h4>Countries shown:</h4>
@@ -198,7 +198,7 @@
 
     var fromYearSelection = d3.select("#fromYear");
     var toYearSelection = d3.select("#toYear");
-    for (var i = 1998; i <= 2018; ++i) {
+    for (var i = 2005; i <= 2018; ++i) {
         fromYearSelection.append("option")
             .attr("value", i)
             .text(i);
@@ -209,7 +209,7 @@
 
     var yearSelection1 = d3.select("#year1");
     var yearSelection2 = d3.select("#year2");
-    for (var i = 1998; i <= 2017; ++i) {
+    for (var i = 2005; i <= 2017; ++i) {
         yearSelection1.append("option")
             .attr("value", i)
             .text(i);
@@ -219,7 +219,7 @@
     }
 
     document.getElementById("toYear").value = "2018";
-    document.getElementById("toMonth").value = "Oct";
+    document.getElementById("toMonth").value = "Apr";
 
     //Width and height
     var margin = {top: 30, right: 20, bottom: 30, left: 50};
@@ -274,7 +274,7 @@
 
 
     // Process the debt data and make the charts.
-    d3.csv("debt.csv", function(data) {
+    d3.csv("debt1.csv", function(data) {
         dataAllCountries = {};
 
         // Process the date and rate of each datum, and add it to the corresponding country's array.
@@ -320,7 +320,7 @@
             option.append("input")
                 .attr("type", "checkbox")
                 .property("checked", function(d) {
-                    return (d == "United States" || d == "National Average")
+                    return (d == "United States" )
                 })
                 .attr("name", "countrySelection")
                 .attr("id", removeWhitespace)
@@ -329,7 +329,7 @@
                 .text(d.country);
             option.append("br");
             /*
-            if (d.country == "United States" || d.country == "National Average") {
+            if (d.country == "United States" ) {
               option.select("input").attr("checked", true);
             }
             */
@@ -351,10 +351,10 @@
             .append("svg")
             .style("display", "block")
             .attr("id", function(d) { return removeWhitespace(d.country); })
-            .classed("chartActive", function(d) { return d.country == "National Average" || d.country == "United States"; })
+            .classed("chartActive", function(d) { return  d.country == "United States"; })
             .attr("width", svgWidth)
             .attr("height", function(d) {
-                if (d.country == "National Average" || d.country == "United States") {
+                if ( d.country == "United States") {
                     return svgHeight;
                 } else {
                     return 0;
@@ -441,7 +441,7 @@
             .attr("y", 0)
             .attr("text-anchor", "end")
             .style("font", "20px Arial")
-            .attr("fill", "#888")
+            .attr("fill", "black")
             .text(function(d) { return d; });
 
 
@@ -630,10 +630,10 @@
 
         // Update areas.
         this.select(".area.below")
-            .attr("fill", "rgb(145,207,96)")
+            .attr("fill", "rgb(153,255,153)")
             .attr("d", function(d) {
                 var y0 = function(a,i) {
-                    return y(d3.min([d.series[comparedCountry][i].unemployment, d.series[d.country][i].debt]));
+                    return y(d3.min([d.series[comparedCountry][i].debt, d.series[d.country][i].debt]));
                 };
                 return valueArea.y0(y0)(d.series[d.country]);
             });
@@ -687,11 +687,11 @@
         x.domain([fromDate1, toDate1]);
 
         // Offset to obtain compared year debt value.
-        var iteratorOffset = 12 * (year1 - year2);
+        var iteratorOffset = 4 * (year1 - year2);
 
         // Update areas.
         this.select(".area.below")
-            .attr("fill", "rgb(145,207,96)")
+            .attr("fill", "rgb(153,255,153)")
             .attr("d", function(d) {
                 var y0 = function(a,i) {
                     // If the new iterator is within range, use that value.
